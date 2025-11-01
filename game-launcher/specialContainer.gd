@@ -22,8 +22,11 @@ class_name SidewaysUContainer
 		set(value): Exponent = value; queue_sort()
 
 
+signal reShuffled
+
 func _notification(what):
 	if what == NOTIFICATION_SORT_CHILDREN:
+		reShuffled.emit()
 		var focusedID = get_children().find(FocusedNode)
 		for c in get_children():
 			if c is Control:

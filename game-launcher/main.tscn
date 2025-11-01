@@ -125,9 +125,11 @@ layout_mode = 2
 
 [node name="Control6" parent="DisplayContainer/Container" instance=ExtResource("3_h2yge")]
 layout_mode = 2
+metadata/bgColor = Color(0, 0, 0, 1)
 
 [node name="Control7" parent="DisplayContainer/Container" instance=ExtResource("3_h2yge")]
 layout_mode = 2
+metadata/bgColor = Color(1, 0, 0, 1)
 
 [node name="Control8" parent="DisplayContainer/Container" instance=ExtResource("3_h2yge")]
 layout_mode = 2
@@ -157,3 +159,5 @@ flip_v = true
 libraries = {
 &"": SubResource("AnimationLibrary_272bh")
 }
+
+[connection signal="reShuffled" from="DisplayContainer/Container" to="." method="_on_container_re_shuffled"]
