@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7dg7shhjno1v"]
+[gd_scene load_steps=4 format=3 uid="uid://c7dg7shhjno1v"]
 
+[ext_resource type="Texture2D" uid="uid://clhlw2bac3lna" path="res://shape.svg" id="1_o7ton"]
 [ext_resource type="Texture2D" uid="uid://620s5b6ac6vj" path="res://cradleLogo.png" id="1_wiibq"]
-[ext_resource type="Texture2D" uid="uid://cxck5fp8a460r" path="res://icon.svg" id="2_o7ton"]
+[ext_resource type="Texture2D" uid="uid://dl5wx64cxcb6x" path="res://kaplin.png" id="3_j17i1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -13,34 +14,49 @@ offset_top = -50.5
 offset_right = 376.0
 offset_bottom = 50.5
 
-[node name="ColorRect" type="ColorRect" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.227451, 0.109804, 0.109804, 1)
+[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+self_modulate = Color(0.913333, 0.74, 1, 1)
+layout_mode = 0
+offset_left = -25.0
+offset_right = 402.0
+offset_bottom = 102.0
+texture = ExtResource("1_o7ton")
+patch_margin_left = 27
+patch_margin_right = 27
 
-[node name="TextureRect" type="TextureRect" parent="Control/ColorRect"]
+[node name="NinePatchRect2" type="NinePatchRect" parent="Control/NinePatchRect"]
+self_modulate = Color(0.753867, 0.5016, 0.88, 1)
+show_behind_parent = true
+texture_filter = 1
+layout_mode = 0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 430.0
+offset_bottom = 106.0
+texture = ExtResource("1_o7ton")
+patch_margin_left = 27
+patch_margin_right = 27
+
+[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.00531915
-anchor_top = 0.019802
-anchor_right = 0.710106
-anchor_bottom = 0.980198
+anchor_left = 0.0655738
+anchor_top = 0.0196078
+anchor_right = 0.660422
+anchor_bottom = 0.980392
 texture = ExtResource("1_wiibq")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="Control/ColorRect"]
-layout_mode = 0
-anchor_left = 0.726064
-anchor_top = 0.019802
-anchor_right = 0.992021
-anchor_bottom = 0.980198
-texture = ExtResource("2_o7ton")
+[node name="TextureRect2" type="TextureRect" parent="Control/NinePatchRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.660422
+anchor_top = -0.00980392
+anchor_right = 0.93911
+anchor_bottom = 1.0098
+texture = ExtResource("3_j17i1")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true

@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1x2se33xxc3e"]
+[gd_scene load_steps=11 format=3 uid="uid://c1x2se33xxc3e"]
 
 [ext_resource type="Script" uid="uid://bqs80gt38m7o7" path="res://mainManager.gd" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://ck8huegqea3x1" path="res://specialContainer.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://cj54wwnhta225" path="res://circle.svg" id="2_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://c7dg7shhjno1v" path="res://buttonTest1.tscn" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://b4qorwjucrdj6" path="res://point.svg" id="5_lquwl"]
 
 [sub_resource type="Gradient" id="Gradient_1bvp3"]
 offsets = PackedFloat32Array(0, 0.337662, 0.681818, 1)
@@ -12,6 +13,43 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.681818, 1, 1, 1, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lquwl"]
 gradient = SubResource("Gradient_1bvp3")
 fill_to = Vector2(0.733945, 0.733945)
+
+[sub_resource type="Animation" id="Animation_7mycd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lquwl"]
+resource_name = "move"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.49, 1),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -110.3), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_272bh"]
+_data = {
+&"RESET": SubResource("Animation_7mycd"),
+&"move": SubResource("Animation_lquwl")
+}
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("ContainerNode")]
 script = ExtResource("1_0xm2m")
@@ -51,6 +89,7 @@ stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="DisplayContainer/BGColor"]
 modulate = Color(1, 1, 1, 0.470588)
+self_modulate = Color(0.4928, 0.4928, 0.77, 1)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -64,7 +103,7 @@ offset_right = 1153.0
 offset_bottom = 648.0
 script = ExtResource("1_ig7tw")
 FocusedNode = NodePath("Control2")
-YSpacing = 185.925
+YSpacing = 116.23
 Wrap = true
 SelectedXOffset = 141.95
 Exponent = 1.75
@@ -107,3 +146,14 @@ offset_bottom = 21.0
 scale = Vector2(9.89673, 3.22652)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "choose a game"
+
+[node name="Point" type="Sprite2D" parent="."]
+position = Vector2(627, 360)
+rotation = 1.57079
+texture = ExtResource("5_lquwl")
+flip_v = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Point"]
+libraries = {
+&"": SubResource("AnimationLibrary_272bh")
+}
