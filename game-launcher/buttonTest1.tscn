@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7dg7shhjno1v"]
+
+[ext_resource type="Texture2D" uid="uid://620s5b6ac6vj" path="res://cradleLogo.png" id="1_wiibq"]
+[ext_resource type="Texture2D" uid="uid://cxck5fp8a460r" path="res://icon.svg" id="2_o7ton"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_top = -50.5
+offset_right = 376.0
+offset_bottom = 50.5
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.227451, 0.109804, 0.109804, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Control/ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00531915
+anchor_top = 0.019802
+anchor_right = 0.710106
+anchor_bottom = 0.980198
+texture = ExtResource("1_wiibq")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="Control/ColorRect"]
+layout_mode = 0
+anchor_left = 0.726064
+anchor_top = 0.019802
+anchor_right = 0.992021
+anchor_bottom = 0.980198
+texture = ExtResource("2_o7ton")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
