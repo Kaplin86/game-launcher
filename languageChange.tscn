@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjd5ru6itt8i5"]
+[gd_scene load_steps=5 format=3 uid="uid://cjd5ru6itt8i5"]
 
 [ext_resource type="Texture2D" uid="uid://clhlw2bac3lna" path="res://shape.svg" id="1_dnpnt"]
-[ext_resource type="Texture2D" uid="uid://620s5b6ac6vj" path="res://cradleLogo.png" id="2_o6m17"]
-[ext_resource type="Texture2D" uid="uid://dl5wx64cxcb6x" path="res://kaplin.png" id="3_tq2ce"]
+[ext_resource type="Texture2D" uid="uid://chckx8xtbx25g" path="res://Flag-Japan.png" id="2_dnpnt"]
+[ext_resource type="Texture2D" uid="uid://dx0cv5wm53cs2" path="res://Flag_of_the_United_States.png" id="3_o6m17"]
+[ext_resource type="Texture2D" uid="uid://bguqtkpxsplbf" path="res://arrow (2).svg" id="4_o6m17"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+metadata/type = "translate"
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
@@ -40,11 +42,11 @@ patch_margin_right = 27
 [node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0655738
-anchor_top = 0.0196078
-anchor_right = 0.660422
-anchor_bottom = 0.980392
-texture = ExtResource("2_o6m17")
+anchor_left = -0.028103
+anchor_top = 0.0147059
+anchor_right = 0.566745
+anchor_bottom = 0.97549
+texture = ExtResource("2_dnpnt")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
@@ -52,11 +54,24 @@ metadata/_edit_use_anchors_ = true
 [node name="TextureRect2" type="TextureRect" parent="Control/NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.660422
-anchor_top = -0.00980392
-anchor_right = 0.93911
-anchor_bottom = 1.0098
-texture = ExtResource("3_tq2ce")
+anchor_left = 0.529274
+anchor_top = -0.230392
+anchor_right = 0.946136
+anchor_bottom = 1.20098
+texture = ExtResource("3_o6m17")
 expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
+
+[node name="Arrow(2)" type="Sprite2D" parent="Control"]
+modulate = Color(0.19, 0.19, 0.19, 1)
+texture_filter = 1
+position = Vector2(178, 25.5)
+texture = ExtResource("4_o6m17")
+
+[node name="Arrow(2)2" type="Sprite2D" parent="Control"]
+modulate = Color(0.19, 0.19, 0.19, 1)
+texture_filter = 1
+position = Vector2(180, 72.5)
+rotation = -3.14159
+texture = ExtResource("4_o6m17")
