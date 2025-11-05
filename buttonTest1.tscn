@@ -38,7 +38,7 @@ texture = ExtResource("1_o7ton")
 patch_margin_left = 27
 patch_margin_right = 27
 
-[node name="TextureRect" type="TextureRect" parent="Control/NinePatchRect"]
+[node name="Logo" type="TextureRect" parent="Control/NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0655738
@@ -50,7 +50,7 @@ expand_mode = 1
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="Control/NinePatchRect"]
+[node name="Dev" type="TextureRect" parent="Control/NinePatchRect"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.660422
